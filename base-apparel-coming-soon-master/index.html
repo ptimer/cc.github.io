@@ -42,7 +42,7 @@
   <script type="text/javascript">
     function sendEmail(e){
       e.preventDefault();
-      if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.getElementById("textt").value)){
+      if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(String(document.getElementById("textt").value).toLowerCase())){
         document.getElementById("buttonSendEmail").style.right = "-40px";
         document.getElementById("iconError").style.display = "block";
         document.getElementById("emailBoxID").style.border = "2px solid var(--Soft-Red)";

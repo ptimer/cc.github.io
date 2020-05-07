@@ -1,7 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:200,400,600&display=swap');
 
+form {
+	transform: translateX(-100%);
+	animation: comeinleft 0.5s ease forwards;
+}
+
+@keyframes comeinleft {
+	to {
+		transform: translateX(0);
+	}
+}
+
+@keyframes comeinright {
+	to {
+		transform: translateX(0);
+	}
+}
+
+h2{
+	transform: translateX(-100%);
+	animation: comeinleft 0.5s ease forwards;
+}
+
+p{
+	transform: translateX(100%);
+	animation: comeinright 0.5s ease forwards;
+}
 
 @media (max-width: 1200px) {
 	.photoBlock{
