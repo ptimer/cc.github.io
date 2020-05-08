@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+body{
+  font-family: Inter;
+  background: hsl(0, 0%, 100%);
+  font-size: 14px;
+}
+
+#container{
+  padding: 5vh 10vw;
+  min-height: 100vh;
+}
+
+/* gray background top */
+
+#bg-top{
+  width: 100%;
+  height: 30vh;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px; 
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  background: hsl(225, 100%, 98%);
+}
+
+/* grid setting for header .followers .overviewToday blocks */
+
+#header{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 5vh;
+}
+
+.followers{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 3vw;
+ }
+
+.overviewToday{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 3vw;
+}
+
+/* social media dashboard */
+
+h1{
+  color: hsl(230, 17%, 14%);
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+/* total followers */
+
+h3{
+  color: hsl(228, 12%, 44%);
+  font-size: 14px;
+  margin-top: 0;
+}
+
+/* overview today*/
+h2{
+  color: hsl(228, 12%, 44%);
+}
+
+
+/* common card design */
+
+.followers>div, .overviewToday>div{
+  background: hsl(227, 47%, 96%);
+  border-radius: 10px; 
+}
+
+/* followers card design */
+
+.followers>div{
+  padding: 30px 0;
+  text-align: center;
+  position: relative;
+}
+
+/* top-card-bg for total followers */
+
+.followers>div>div{
+  height: 0.6vh;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.facebook-card-top-bg{
+  background: hsl(203, 89%, 53%);
+}
+
+.twitter-card-top-bg{
+  background: hsl(195, 100%, 50%);
+}
+
+.instagram-card-top-bg{
+  background: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+}
+
+.youtube-card-top-bg{
+  background: hsl(348, 97%, 39%);
+}
+
+/* design for followers cards text */
+
+/*nickname*/
+.followers>div>span:nth-of-type(1){
+  color: hsl(228, 12%, 44%);
+  font-size: 12px;
+  font-weight: bold;
+  vertical-align: super;
+}
+
+/*numberofsubscribers*/
+.followers>div>span:nth-of-type(2){
+  color: hsl(230, 17%, 14%);
+  font-size: 52px;
+  font-weight: bold;
+  display: block;
+  margin: 15px 0 3px 0;
+}
+
+/*followers word*/
+.followers>div>span:nth-of-type(3){
+  color: hsl(228, 12%, 44%);
+  font-size: 12px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 30px;
+}
+
+/*down or up count*/
+.followers>div>span:nth-of-type(4){
+  font-weight: bold;
+  font-size: 12px;
+}
+
+/* overview today card design */
+
+.overviewToday>div{
+  padding: 30px 35px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-row-gap: 2vh;
+}
+
+/* overview today text design */
+
+
+/*page views */
+.overviewToday>div>div:nth-of-type(1){
+  color: hsl(228, 12%, 44%);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* count */
+.overviewToday>div>div:nth-of-type(2){;
+  text-align: right;
+}
+
+/*social medias*/
+.overviewToday>div>div:nth-of-type(3){
+  color: hsl(230, 17%, 14%);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/*percentage*/
+.overviewToday>div>div:nth-of-type(4){;
+  position: relative;
+}
+
+.overviewToday>div>div:nth-of-type(4)>div{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.upGreen{
+  color: hsl(163, 72%, 41%);
+}
+
+.downRed{
+  color: hsl(356, 69%, 56%) !important;
+}
+
+
+/* mobile version */
+
+@media all and (max-width: 575px){
+  .followers{
+    grid-template-columns: 1fr;
+  }
+
+  .overviewToday{
+    grid-template-columns: 1fr;
+  }
+}
