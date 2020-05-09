@@ -20,7 +20,14 @@ body{
   position: absolute;
   top: 0;
   z-index: -1;
+}
+
+.bg-top-light{
   background: hsl(225, 100%, 98%);
+}
+
+.bg-top-dark{
+  background: hsl(232, 19%, 15%);
 }
 
 /* grid setting for header .followers .overviewToday blocks */
@@ -67,6 +74,10 @@ button{
   outline: none;
 }
 
+.gradientButtonDarkMode{
+  background: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%))
+}
+
 button:hover{
   background: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
   cursor: pointer;
@@ -97,9 +108,16 @@ button span{
 /* social media dashboard */
 
 h1{
-  color: hsl(230, 17%, 14%);
   margin: 0;
   margin-bottom: 10px;
+}
+
+.h1-dark-mode{
+  color: hsl(0, 0%, 100%);
+}
+
+.h1-light-mode{
+  color: hsl(230, 17%, 14%);
 }
 
 /* total followers */
@@ -110,6 +128,14 @@ h3{
   margin-top: 0;
 }
 
+.h3-light-mode{
+  color: hsl(228, 12%, 44%);
+}
+
+.h3-dark-mode{
+  color: hsl(228, 34%, 66%);
+}
+
 /* overview today*/
 h2{
   color: hsl(228, 12%, 44%);
@@ -117,11 +143,17 @@ h2{
   margin-bottom: 3vh;
 }
 
+.h2-light-mode{
+  color: hsl(228, 12%, 44%);
+}
+
+.h2-dark-mode{
+  color: hsl(0, 0%, 100%);
+}
 
 /* common card design */
 
 .followers>div, .overviewToday>div{
-  background: hsl(227, 47%, 96%);
   border-radius: 10px; 
 }
 
@@ -172,7 +204,6 @@ h2{
 
 /*numberofsubscribers*/
 .followers>div>span:nth-of-type(2){
-  color: hsl(230, 17%, 14%);
   font-size: 52px;
   font-weight: bold;
   display: block;
@@ -215,14 +246,13 @@ h2{
   font-weight: bold;
 }
 
-/* count */
+/* socialMedias */
 .overviewToday>div>div:nth-of-type(2){;
   text-align: right;
 }
 
-/*social medias*/
+/*count*/
 .overviewToday>div>div:nth-of-type(3){
-  color: hsl(230, 17%, 14%);
   font-size: 32px;
   font-weight: bold;
 }
@@ -258,5 +288,27 @@ h2{
 
   .overviewToday{
     grid-template-columns: 1fr;
+  }
+
+  #header{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  h3{
+    margin-bottom: 30px;
+  }
+
+  #header>div:first-child{
+    border-bottom: 1px solid hsl(228, 34%, 66%);
+    margin-bottom: 30px;
+  }
+
+  .button>div>span{
+    float: left;
+  }
+
+  .button>div{
+    overflow: hidden;
   }
 }

@@ -8,20 +8,20 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <title>07.05.20</title>
 </head>
-<body>
+<body onload="lightModeApply()">
   <div id="bg-top"></div>
 
 
   <div id="container">
     <div id="header">
       <div>
-        <h1>Social Media Dashboard</h1>
-        <h3>Total Followers: 23,004</h3>
+        <h1 id="titleSocialMedia">Social Media Dashboard</h1>
+        <h3 id="titleTotalFollowers">Total Followers: 23,004</h3>
       </div>
       <div class="button">
         <div>
           <span>Dark Mode</span>
-          <button onclick="switchButton()">
+          <button id="buttonMode" onclick="switchButton()">
             <span id="switchButton"></span>
           </button>
         </div>
@@ -69,7 +69,7 @@
             <span class="downRed">144 Today</span>
           </div>
         </div>
-        <h2>Overview - Today</h2>
+        <h2 id="titleOverview">Overview - Today</h2>
         <div class="overviewToday">
           <div>
               <div>
@@ -198,7 +198,7 @@
                 <img src="images/icon-youtube.svg">
               </div>
               <div>
-                <span>Total</span>
+                <span>1407</span>
               </div>
               <div>
                 <div class="downRed">
@@ -218,17 +218,108 @@
         /* dark mode */
         document.getElementById("switchButton").classList.add('switchDarkMode');
         document.getElementById("switchButton").classList.remove('switchLightMode');
+        document.getElementById("buttonMode").classList.add('gradientButtonDarkMode');
 
-        document.body.style.background = "hsl(230, 17%, 14%)";
+        darkModeApply();
+
         switchFlag = false;
 
       }else{
         /* light mode */
         document.getElementById("switchButton").classList.add('switchLightMode');
         document.getElementById("switchButton").classList.remove('switchDarkMode');
+        document.getElementById("buttonMode").classList.remove('gradientButtonDarkMode');
+
+        lightModeApply();
+
         switchFlag = true;
-        document.body.style.background = "white";
       }
+    }
+
+
+    function darkModeApply(){
+      document.body.style.background = "hsl(230, 17%, 14%)";
+      document.getElementById("bg-top").classList.add('bg-top-dark');
+      document.getElementById("bg-top").classList.remove('bg-top-light');
+
+      document.getElementById("titleSocialMedia").classList.add('h1-dark-mode');
+      document.getElementById("titleSocialMedia").classList.remove('h1-light-mode');
+
+      document.getElementById("titleTotalFollowers").classList.add('h3-dark-mode');
+      document.getElementById("titleTotalFollowers").classList.remove('h3-light-mode');
+
+      document.getElementById("titleOverview").classList.add('h2-dark-mode');
+      document.getElementById("titleOverview").classList.remove('h2-light-mode');
+
+      let FollowersSpan = document.querySelectorAll(".followers>div>span:nth-of-type(2)");
+      for(var i=0;i<FollowersSpan.length;i++)
+      {
+          FollowersSpan[i].style.color = "hsl(0, 0%, 100%)";
+      }
+
+
+      let overviewSpan = document.querySelectorAll(".overviewToday>div>div:nth-of-type(3)");
+      for(var i=0;i<overviewSpan.length;i++)
+      {
+          overviewSpan[i].style.color = "hsl(0, 0%, 100%)";
+      }
+
+
+      /* followers card background */
+      let followersCards = document.querySelectorAll('.followers>div');
+      for(var i = 0; i < followersCards.length; i++)
+      {
+        followersCards[i].style.background = "hsl(228, 28%, 20%)";
+      }
+
+      /* overviewToday card background */
+      let overviewToday = document.querySelectorAll('.overviewToday>div');
+      for(var i = 0; i < overviewToday.length; i++)
+      {
+        overviewToday[i].style.background = "hsl(228, 28%, 20%)";
+      }
+    }
+
+    function lightModeApply(){
+      document.body.style.background = "hsl(0, 0%, 100%)";
+      document.getElementById("bg-top").classList.add('bg-top-light');
+      document.getElementById("bg-top").classList.remove('bg-top-dark');
+
+      document.getElementById("titleSocialMedia").classList.add('h1-light-mode');
+      document.getElementById("titleSocialMedia").classList.remove('h1-dark-mode');
+
+      document.getElementById("titleTotalFollowers").classList.add('h3-light-mode');
+      document.getElementById("titleTotalFollowers").classList.remove('h3-dark-mode');
+
+      document.getElementById("titleOverview").classList.add('h2-light-mode');
+      document.getElementById("titleOverview").classList.remove('h2-dark-mode');
+
+      let FollowersSpan = document.querySelectorAll(".followers>div>span:nth-of-type(2)");
+      for(var i=0;i<FollowersSpan.length;i++)
+      {
+          FollowersSpan[i].style.color = "hsl(230, 17%, 14%)";
+      }    
+
+      let overviewSpan = document.querySelectorAll(".overviewToday>div>div:nth-of-type(3)");
+      for(var i=0;i<overviewSpan.length;i++)
+      {
+          overviewSpan[i].style.color = "hsl(230, 17%, 14%)";
+      }
+
+      /* followers card background */
+      let followersCards = document.querySelectorAll('.followers>div');
+      for(var i = 0; i < followersCards.length; i++)
+      {
+        followersCards[i].style.background = "hsl(227, 47%, 96%)";
+      }
+
+      /* overviewToday card background */
+      let overviewToday = document.querySelectorAll('.overviewToday>div');
+      for(var i = 0; i < overviewToday.length; i++)
+      {
+        overviewToday[i].style.background = "hsl(227, 47%, 96%)";
+      }
+      
     }
   </script>
 </body>
