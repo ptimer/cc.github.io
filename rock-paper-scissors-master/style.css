@@ -4,6 +4,7 @@ body{
 	background: radial-gradient(at top, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
 	font-family: 'Barlow Semi Condensed', sans-serif;
 	user-select: none;
+	position: relative;
 }
 
 /* the parent class of everything */
@@ -145,4 +146,41 @@ body{
 	right: 50px;
 	bottom: 50px;
 	cursor: pointer;
+}
+
+/* rules modal */
+
+#rules_modal{
+	width: 400px;
+	border-radius: 8px;
+	background: white;
+	padding: 30px 20px; 
+	font-size: 40px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: hsl(229, 25%, 31%);
+	position: absolute;
+	left: calc(50vw - 220px);
+	top: calc(50vh - 221.5px);
+	z-index: 1;
+	display: none;
+}
+
+.rules_modal_top{
+	overflow: hidden;
+	padding: 0 20px;
+}
+
+#rules_modal .rules_modal_top>span{
+	float: left;
+}
+
+#rules_modal .rules_modal_top>img{
+	float: right;
+	margin-top: 13px;
+}
+
+.rules_modal_bottom{
+	margin-top: 60px;
+	text-align: center;
 }

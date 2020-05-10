@@ -9,7 +9,7 @@
   <title>09.05.20</title>
 </head>
 <body>
-  <div class="container">
+  <div class="container" id="changeContainer">
     <div class="contentContainer">
 <!-- score block -->
       <div class="scoreBlock">
@@ -39,9 +39,32 @@
       </div>
     </div>
 <!-- Rules button -->
-    <div class="rules_button">
+    <div class="rules_button" onclick="showRulesModal()">
       <span>Rules</span>
     </div>
   </div> 
+
+<!-- modal window -->
+  <div id="rules_modal">
+      <div class="rules_modal_top">
+        <span>Rules</span>
+        <img src="images/icon-close.svg" onclick="closeRulesModal()">
+      </div>
+      <div class="rules_modal_bottom">
+        <img src="images/image-rules.svg">
+      </div>
+  </div>
+
+  <script type="text/javascript">
+    function showRulesModal(){
+      document.getElementById("rules_modal").style.display = "block";
+      document.getElementById("changeContainer").style.opacity = "0.1";
+    }
+
+    function closeRulesModal(){
+      document.getElementById("rules_modal").style.display = "none";
+      document.getElementById("changeContainer").style.opacity = "1";
+    }
+  </script>
 </body>
 </html>
