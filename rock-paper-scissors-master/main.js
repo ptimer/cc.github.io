@@ -12,31 +12,38 @@
 
 /* THE WAY IT BEHAVES WHEN CLICKING AT PAPER SCISSORS OR ROCK */
 
-	pickBlock__paper.addEventListener("click", function(){
-		/* game */
-		let clientPlayer = "paper";
-		let clientPC = PcIntelligent(clientPlayer);
-		let resultOfTheGame = game(clientPlayer + " " + clientPC);
 
-		/* styles */
-		YouPickedBlock.style.display = "grid";
-		pickBlock.style.display = "none";
+		listenerPickBlock(pickBlock__paper, "paper");
+		listenerPickBlock(pickBlock__scissors, "scissors");
+		listenerPickBlock(pickBlock__rock, "rock");
+		
+		function listenerPickBlock(pickBlockId, clientPl)
+		{
+			pickBlockId.addEventListener("click", function(){
+				/* game */
+				let clientPlayer = clientPl;
+				let clientPC = PcIntelligent(clientPlayer);
+				let resultOfTheGame = game(clientPlayer + " " + clientPC);
 
-		/*show Player card */
-		showPlayer(clientPlayer);
+				/* styles */
+				YouPickedBlock.style.display = "grid";
+				pickBlock.style.display = "none";
 
-		/*show PC card and score */
-		setTimeout(function(){
-			showPcPlayer(clientPC);
-			showScore();
-		}, 1000);
+				/*show Player card */
+				showPlayer(clientPlayer);
 
-		/* show text */
-		setTimeout(function(){
-			showFinalWindow(resultOfTheGame);
-		}, 2000);
+				/*show PC card and score */
+				setTimeout(function(){
+					showPcPlayer(clientPC);
+					showScore();
+				}, 1000);
 
-	});
+				/* show text */
+				setTimeout(function(){
+					showFinalWindow(resultOfTheGame);
+				}, 2000);
+			});
+		}
 
 /* game logic */
 
@@ -65,19 +72,16 @@ function PcIntelligent(clientPlayer){
 
 function game(whoWin){
 
-	for(let i = 0; i < rules.length; i++){
+	for(let i = 0; rules.length > i; i++){
 		if(whoWin == rules[i]){
 			scoreUp();
 			return textWin;
 			break;
 		}
-		else
-		{
-			scoreDown();
-			return textLose;
-			break;
-		}
 	}
+
+	scoreDown();
+	return textLose;
 
 }
 
@@ -150,3 +154,7 @@ function showFinalWindow(text){
 	YouPickedBlock.style.width = "940px";
 	YouPickedBlock.style.gridTemplateColumns = "repeat(3, 1fr)";
 }
+
+
+/* play again button */
+
