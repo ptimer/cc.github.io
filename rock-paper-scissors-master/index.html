@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="step1.css">
+  <link rel="stylesheet" type="text/css" href="step2and3.css">
+  <link rel="stylesheet" type="text/css" href="step4.css">
   <title>09.05.20</title>
 </head>
 <body>
@@ -20,26 +22,56 @@
         </div>
         <div class="scoreBlock__right">
           <span>score</span>
-          <span>12</span>
+          <span id="scoreState">0</span>
         </div>
       </div>
 
 <!-- pick block -->
-      <div class="pickBlock">
+      <div id="pickBlock">
         <img class="bg-triangle" src="images/bg-triangle.svg">
-        <div class="pickBlock__paper">
+        <div id="pickBlock__paper">
           <img src="images/icon-paper.svg">
         </div>
-        <div class="pickBlock__scissors">
+        <div id="pickBlock__scissors">
           <img src="images/icon-scissors.svg">
         </div>
-        <div class="pickBlock__rock">
+        <div id="pickBlock__rock">
           <img src="images/icon-rock.svg">
         </div>
       </div>
-    </div>
+
+<!-- step 2-3 block -->
+      <div id="YouPickedBlock">
+        <div id="YouPickedBlock_left_bottom">
+          <div>
+            <span>You picked</span>
+          </div>
+          <div id="PlayerChoosen" class="pickBlock_img_step2">
+            <img id="img_player_player" src="images/icon-scissors.svg">
+          </div>
+        </div>
+        
+        <!-- Step 4 block lose or win -->
+        <div id="WinOrLoseBlock">
+          <span id="winOrLoseText"></span>
+          <div>Play again</div>
+        </div>
+
+        <div id="YouPickedBlock_right_bottom">
+          <div>
+            <span>The house picked</span>
+          </div>
+          <!-- pickBlock__scissors_step2 pickBlock_img_step2 margin_left_auto -->
+          <div id="PCChoosen" class="pickBlock_img_step2 margin_left_auto">
+            <img id="img_pc_player" src="images/icon-scissors.svg">
+          </div>
+          <div id="circle"></div>
+        </div>
+        
+      </div>
+   </div>
 <!-- Rules button -->
-    <div class="rules_button" onclick="showRulesModal()">
+    <div id="rules_button">
       <span>Rules</span>
     </div>
   </div> 
@@ -48,23 +80,13 @@
   <div id="rules_modal">
       <div class="rules_modal_top">
         <span>Rules</span>
-        <img src="images/icon-close.svg" onclick="closeRulesModal()">
+        <img src="images/icon-close.svg" id="icon_close">
       </div>
       <div class="rules_modal_bottom">
         <img src="images/image-rules.svg">
       </div>
   </div>
 
-  <script type="text/javascript">
-    function showRulesModal(){
-      document.getElementById("rules_modal").style.display = "block";
-      document.getElementById("changeContainer").style.opacity = "0.1";
-    }
-
-    function closeRulesModal(){
-      document.getElementById("rules_modal").style.display = "none";
-      document.getElementById("changeContainer").style.opacity = "1";
-    }
-  </script>
+  <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
