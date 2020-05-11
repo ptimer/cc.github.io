@@ -45,6 +45,21 @@
 			});
 		}
 
+/* play again clicked button */
+
+		playAgain.addEventListener("click", function(){
+			/* reverse all changes on step 2, 3, 4 */
+			hidePcPlayer();
+			hidePlayer();
+			hideFinalWindow();
+			
+			/* show step 1 */
+			YouPickedBlock.style.display = "none";
+			pickBlock.style.display = "block";
+
+		});
+
+
 /* game logic */
 
 var score = 0;
@@ -127,6 +142,13 @@ function showPcPlayer(clientPC){
 	}
 }
 
+
+function hidePcPlayer(){
+	circle.style.display = "block";
+	PCChoosen.style.display = "none";
+	PCChoosen.classList.remove(PCChoosen.classList[2]);
+}
+
 /* show Player card */
 
 function showPlayer(clientPlayer){
@@ -146,6 +168,10 @@ function showPlayer(clientPlayer){
 	}
 }
 
+function hidePlayer(){
+	PlayerChoosen.classList.remove(PlayerChoosen.classList[1]);
+}
+
 /* show final window step 4 win or lose */
 
 function showFinalWindow(text){
@@ -153,6 +179,12 @@ function showFinalWindow(text){
 	WinOrLoseBlock.style.display = "block";
 	YouPickedBlock.style.width = "940px";
 	YouPickedBlock.style.gridTemplateColumns = "repeat(3, 1fr)";
+}
+
+function hideFinalWindow(){
+	WinOrLoseBlock.style.display = "none";
+	YouPickedBlock.style.width = "700px";
+	YouPickedBlock.style.gridTemplateColumns = "repeat(2, 1fr)";
 }
 
 
