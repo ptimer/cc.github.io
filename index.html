@@ -1,92 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-  <link rel="stylesheet" type="text/css" href="step1.css">
-  <link rel="stylesheet" type="text/css" href="step2and3.css">
-  <link rel="stylesheet" type="text/css" href="step4.css">
-  <title>09.05.20</title>
+    <meta charset="UTF-8">
+    <title>Document</title>
+   <link rel="stylesheet" type="text/css" href="main.css">
+
+
 </head>
 <body>
-  <div class="container" id="changeContainer">
-    <div class="contentContainer">
-<!-- score block -->
-      <div class="scoreBlock">
-        <div class="scoreBlock__left">
-          <span>rock</span>
-          <span>paper</span>
-          <span>scissors</span>
-        </div>
-        <div class="scoreBlock__right">
-          <span>score</span>
-          <span id="scoreState">0</span>
-        </div>
-      </div>
+  	<main>
+	  	<div class="content">
+	  		<button class="toggle">
+	  			<div class="bar"></div>
+	  			<div class="bar"></div>
+	  			<div class="bar"></div>
+	  		</button>
 
-<!-- pick block -->
-      <div id="pickBlock">
-        <img class="bg-triangle" src="images/bg-triangle.svg">
-        <div id="pickBlock__paper">
-          <img src="images/icon-paper.svg">
-        </div>
-        <div id="pickBlock__scissors">
-          <img src="images/icon-scissors.svg">
-        </div>
-        <div id="pickBlock__rock">
-          <img src="images/icon-rock.svg">
-        </div>
-      </div>
 
-<!-- step 2-3 block -->
-      <div id="YouPickedBlock">
-        <div id="YouPickedBlock_left_bottom">
-          <div>
-            <span>You picked</span>
-          </div>
-          <div id="PlayerChoosen" class="pickBlock_img_step2">
-            <img id="img_player_player" src="images/icon-scissors.svg">
-          </div>
-        </div>
-        
-        <!-- Step 4 block lose or win -->
-        <div id="WinOrLoseBlock">
-          <span id="winOrLoseText"></span>
-          <div id="playAgain">Play again</div>
-        </div>
+	  		<section id="home" class="section__open">
+	  			<div class="section__title">
 
-        <div id="YouPickedBlock_right_bottom">
-          <div>
-            <span>The house picked</span>
-          </div>
-          <!-- pickBlock__scissors_step2 pickBlock_img_step2 margin_left_auto -->
-          <div id="PCChoosen" class="margin_left_auto pickBlock_img_step2">
-            <img id="img_pc_player" src="images/icon-scissors.svg">
-          </div>
-          <div id="circle"></div>
-        </div>
-        
-      </div>
-   </div>
-<!-- Rules button -->
-    <div id="rules_button">
-      <span>Rules</span>
-    </div>
-  </div> 
+					<div class="ghost_text">
+						<h2>
+							<span>I</span>
+							<span>l</span>
+							<span>l</span>
+							<span>i</span>
+							<span>a&nbsp&nbsp</span>
+							<span>B</span>
+							<span>i</span>
+							<span>l</span>
+							<span>o</span>
+							<span>u</span>
+							<span>s</span>
+						</h2>
+					</div>
 
-<!-- modal window -->
-  <div id="rules_modal">
-      <div class="rules_modal_top">
-        <span>Rules</span>
-        <img src="images/icon-close.svg" id="icon_close">
-      </div>
-      <div class="rules_modal_bottom">
-        <img src="images/image-rules.svg">
-      </div>
-  </div>
+	  			</div>
+	  			<div class="socials">
+	  				<ul>
+	  					<li>
+	  						<a target="_blank" href="https://vk.com/bilous.ilya">
+	  							<span></span>
+	  							<span></span>
+	  							<span></span>
+	  							<span></span>
+	  							<span class="fab fa-vk"></span>
+	  						</a>
+	  					</li>
 
-  <script type="text/javascript" src="main.js"></script>
+	  					<li>
+	  						<a target="_blank" href="https://t.me/IlliaHater">
+	  							<span></span>
+	  							<span></span>
+	  							<span></span>
+	  							<span></span>
+	  							<span class="fab fa-telegram"></span>
+	  						</a>
+	  					</li>
+
+	  					<li>
+	  						<a target="_blank" href="https://www.linkedin.com/in/ilya-bilous-716297153/">
+	  							<span></span>
+	  							<span></span>
+	  							<span></span>
+	  							<span></span>
+	  							<span class="fab fa-linkedin"></span>
+	  						</a>
+	  					</li>
+
+	  					<li>
+	  						<a target="_blank" href="https://github.com/ptimer?tab=repositories">
+	  							<span></span>
+	  							<span></span>
+	  							<span></span>
+	  							<span></span>
+	  							<span class="fab fa-github"></span>
+	  						</a>
+	  					</li>
+	  				</ul>
+	  			</div>
+	  		</section>
+
+	  		<section id="about">
+	  			<div class="section__title">
+	  				Мои навыки
+	  			</div>
+	  			<div class="section__text">
+	  				<div class="myskillsimg">
+	  					<img src="images/development.gif">
+	  				</div>
+		  				<ul>
+		  					<h2>FRONTEND</h2>
+							<li>JavaScript</li>
+							<li>VueJs</li>
+
+							<h2>BACKEND</h2>
+
+							<li>php</li>
+							<li>Laravel</li>
+
+							<h2>Additional skills</h2>
+
+							<li>English Advanced</li>
+							<li>1C</li>
+							<li>Unity3D</li>
+
+		  				</ul>
+	  			</div>
+	  		</section>
+
+	  		<section id="portfolio">
+	  			<div class="section__title">
+	  				Мои работы
+	  			</div>
+	  			<div class="container">
+	  				<div class="card">
+	  					<div class="face face1">
+	  						<div class="content_card">
+	  							<img src="images/emshop1.png">
+	  							<h3>Интернет магазин</h3>
+	  						</div>
+	  					</div>
+	  					<div class="face face2">
+	  						<div class="content_card">
+	  							<p>Разрабатывался для дипломной работы<br>
+	  								Нативный php, mvc<br>Доступы: admin@gmail.com admin
+	  							 <br><a target="_blank" href="https://github.com/ptimer/EcommerceShop">Github</a></p>
+	  							<a target="_blank" href="http://lggp.kl.com.ua">Посмотреть</a>
+	  						</div>
+	  					</div>
+	  				</div>
+
+	  				<div class="card">
+	  					<div class="face face1">
+	  						<div class="content_card">
+	  							<img src="images/social.png">
+	  							<h3>Социальная сеть (В разработке)</h3>
+	  						</div>
+	  					</div>
+	  					<div class="face face2">
+	  						<div class="content_card">
+	  							<p>Для фана. Оформления нет, только набросок. Laravel
+	  							<br><a target="_blank" href="https://github.com/ptimer/SocialNetwork">Github</a></p>
+	  						</div>
+	  					</div>
+	  				</div>
+
+	  				<div class="card">
+	  					<div class="face face1">
+	  						<div class="content_card">
+	  							<img src="images/chatapp.png">
+	  							<h3>Чат приложение</h3>
+	  						</div>
+	  					</div>
+	  					<div class="face face2">
+	  						<div class="content_card">
+	  							<p>Делал по туториалу <a target="_blank" href="https://www.youtube.com/watch?v=5sXmfwnxfjA&list=PLJpBh2VJhy5x2GKfkfIcn0r6P6uLat7xR">YOUTUBE</a><br>
+	  								Laravel & vue js
+	  							<br><a target="_blank" href="https://github.com/ptimer/chatApp">Github</a></p>
+	  						</div>
+	  					</div>
+	  				</div>
+
+
+	  			</div>
+	  		</section>
+	  	</div>
+
+
+	  	<nav>
+	  		<ul>
+	  			<li>
+	  				<button class="home">
+	  					Добро пожаловать
+	  				</button>
+	  			</li>
+	  			<li>
+	  				<button class="about">Что я умею ?</button>
+	  			</li>
+	  			<li>
+	  				<button class="portfolio">Мое портфолио</button>
+	  			</li>
+	  		</ul>
+	  	</nav>
+	</main>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/dbd1719ec7.js"></script>
+    <script type="text/javascript" src="main.js"></script>
 </body>
-</html>
