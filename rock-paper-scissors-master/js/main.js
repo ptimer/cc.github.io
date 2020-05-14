@@ -33,12 +33,12 @@ var InterfaceObj = new Interface();
 				setTimeout(function(){
 					InterfaceObj.showPcPlayer(clientPC);
 					InterfaceObj.showScore(GameObj.getScore());
-				}, 1000);
+				}, 0);
 
 				/* show text */
 				setTimeout(function(){
 					InterfaceObj.showFinalWindow(resultOfTheGame);
-				}, 2000);
+				}, 0);
 			});
 		}
 

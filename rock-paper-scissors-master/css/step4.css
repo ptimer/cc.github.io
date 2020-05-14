@@ -1,6 +1,7 @@
 #WinOrLoseBlock{
 	margin: 220px auto;
 	display: none;
+	text-align: center;
 }
 
 #WinOrLoseBlock>span{

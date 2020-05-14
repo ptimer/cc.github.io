@@ -55,14 +55,19 @@ class Interface{
 	showFinalWindow(text){
 		winOrLoseText.innerText = text;
 		WinOrLoseBlock.style.display = "block";
-		YouPickedBlock.style.width = "940px";
+
 		YouPickedBlock.style.gridTemplateColumns = "repeat(3, 1fr)";
+		YouPickedBlock.style.opacity = 1;
+		YouPickedBlock.classList.add("youPickedBlockLargerGrid");
+		YouPickedBlock.classList.remove("youPickedBlockSmallerGrid");
 	}
 
 	hideFinalWindow(){
 		WinOrLoseBlock.style.display = "none";
-		YouPickedBlock.style.width = "700px";
+		YouPickedBlock.style.opacity = 0;
 		YouPickedBlock.style.gridTemplateColumns = "repeat(2, 1fr)";
+		YouPickedBlock.classList.add("youPickedBlockSmallerGrid");
+		YouPickedBlock.classList.remove("youPickedBlockLargerGrid");
 	}
 
 

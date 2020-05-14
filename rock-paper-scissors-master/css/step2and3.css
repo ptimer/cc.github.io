@@ -1,10 +1,22 @@
 /* YouPickedBlock / display grid */
 
+*{
+	transition: 1s;
+}
+
 #YouPickedBlock{
-	width: 700px;
 	margin: 50px auto;
 	display: none;
 	grid-template-columns: repeat(2, 1fr);
+	opacity: 0;
+}
+
+.youPickedBlockSmallerGrid{
+	max-width: 700px;
+}
+
+.youPickedBlockLargerGrid{
+	max-width: 940px;
 }
 
 /* circles */
@@ -36,8 +48,8 @@
 
 .pickBlock_img_step2{
 	border-radius: 50%;
-	width: 220px;
-	height: 220px;
+	width: 300px;
+	height: 300px;
 	background: white;
 	display: flex;
 }
@@ -70,8 +82,8 @@
 
 #circle{
 	border-radius: 50%;
-	width: 222px;
-	height: 222px;
+	width: 218px;
+	height: 218px;
 	opacity: 0.3;
 	background: black;
 	margin: 135px auto;
